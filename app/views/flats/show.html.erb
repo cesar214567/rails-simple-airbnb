@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <h1>
+      <%= @flat.name %>
+      <%= link_to '✏️', edit_flat_path(@flat) ,:style =>"text-decoration:none; font-size:17px" %>
+      <%= link_to '🗑️', flat_path(@flat),:style =>"text-decoration:none;font-size:17px", :method => "delete" %>
+      <i class="fas fa-euro-sign"></i><%= "#{@flat.price_per_night} " %>
+      <i class="fas fa-user-friends"></i><%= " #{@flat.number_of_guests}" %>
+    </h1>
+    <hr>
+    <h4><%= @flat.address %></h4>
+    <h4><%= @flat.description %></h4>
+  </div>
+</div>

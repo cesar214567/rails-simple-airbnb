@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8 d-flex justify-content-around flex-wrap">
+    <% @flats.each do |flat| %>
+      <div class="card col-3" style="width: 18rem;">
+        <img src="" class="card-img-top" alt="">
+        <div class="card-body">
+          <h5 class="card-title"><%= flat.name %></h5>
+          <p class="card-text"><%= flat.address %></p>
+          <p class="card-text"><%= flat.description %></p>
+          <%= link_to 'More info', flat_path(flat),:class => "text-blue" %>
+          <%= link_to 'Edit', edit_flat_path(flat),:class => "text-warning" %>
+          <%= link_to 'Delete', flat_path(flat), :method => "delete",:class => "text-danger" %>
+        </div>
+      </div>
+    <% end %>
+</div>
